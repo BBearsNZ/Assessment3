@@ -1,0 +1,28 @@
+// See https://aka.ms/new-console-template for more information
+
+static int[] maxElement(int[][] arr) //Declaring a function 
+{
+    int[] newArr = new int[arr.Length]; //making a new array
+    for (int i = 0; i < arr.Length; i++) //iterating through the array
+    {
+        int Largest = arr[i][0]; // setting the largest number to be the first element of the sub array
+        for(int j = 1; j < arr.Length; j++) // iterating through each element of this sub array
+        {
+           if (arr[i][j] > Largest) //is the current element of the array bigger than largest, if yes then set largest to equal this element of the sub array. 
+            {
+                Largest = arr[i][j];
+            }
+            newArr[i] = Largest; //adding the largest number to the new array
+        }
+        
+    }
+    return newArr;
+}
+int[][] arr = new int[][]
+{
+        new int[] {4, 2, 7, 1},
+        new int[] {20, 70, 40, 90},
+        new int[] {1, 2, 0},
+};
+Console.WriteLine("[{0}]", string.Join(", ", maxElement(arr)));
+
